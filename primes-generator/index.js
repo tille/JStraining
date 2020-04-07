@@ -16,7 +16,7 @@ switch (command) {
             let { limit } = argv
             limit = parseInt(limit)
             const getPrime = findPrimes(limit)
-            while (limit-- > 0) console.log(getPrime.next());
+            while (limit--) console.log(getPrime.next());
         } catch (err) {
             throw new Error("Cannot get primes.")
         }
