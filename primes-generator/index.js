@@ -18,7 +18,6 @@ switch (command) {
             const getPrime = findPrimes(limit)
             while (limit-- > 0) console.log(getPrime.next());
         } catch (err) {
-            console.log(err)
             throw new Error("Cannot get primes.")
         }
         break
