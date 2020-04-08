@@ -8,7 +8,9 @@ function build() {
         if (!sieve[i]) {
             const notPrimes = { 
                 *[Symbol.iterator]() { 
-                    for (let j = i * i; j <= maxn; j += i) yield j 
+                    for (let j = i * i; j <= maxn; j += i) {
+                        yield j
+                    } 
                 }
             }
             for (let key of [...notPrimes]) sieve[key] = true
@@ -16,15 +18,13 @@ function build() {
     }
 }
 
-function* findPrimes(limit) {
-    let i = 0, curLimit = 1; 
-    for (; curLimit < limit; i++) {
-        if (!sieve[i]) {
-            curLimit++
-            yield i
+function* findPrimes(limit, i = 0) {
+    while(limit) {
+        if (!sieve[i++]) {
+            limit--
+            yield i-1
         }
     }
-    return i
 }
 
 module.exports = {

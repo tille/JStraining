@@ -13,10 +13,7 @@ switch (command) {
     case "getPrimes":
         try {
             build()
-            let { limit } = argv
-            limit = parseInt(limit)
-            const getPrime = findPrimes(limit)
-            while (limit--) console.log(getPrime.next());
+            console.log(...findPrimes(parseInt(argv['limit'])))
         } catch (err) {
             throw new Error("Cannot get primes.")
         }
