@@ -23,7 +23,7 @@ class Cat extends Pet {
   }
 }
 
-class FactoryPet {
+class petFactory {
   constructor (pet) {
     switch (pet) {
       case 'dog':
@@ -36,4 +36,4 @@ class FactoryPet {
   }
 }
 
-new FactoryPet("dog")
+new petFactory("dog")
